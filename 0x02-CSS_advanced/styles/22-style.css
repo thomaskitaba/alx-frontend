@@ -411,11 +411,12 @@ body {
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-base);
 }
-[data-section-theme=“dark”] {
+[data-section-theme="dark"] {
   --text-color: var(--color-white);
   --section-title-color: var(--color-white);
   background-color: var(--color-black);
 }
+
 a:link {
   --text-color: var(--color-black);
   text-decoration: none;
