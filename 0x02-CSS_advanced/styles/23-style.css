@@ -533,7 +533,7 @@ ul.row {
   display: table;
   clear: both;
 }
-.foot-address {
+.footer-address {
   color: var(--text-color);
 }
 .social-link {
