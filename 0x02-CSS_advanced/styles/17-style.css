@@ -376,6 +376,7 @@ template {
   /* section related */
   --section-title-margin: 0;
   --section-title-color: var(--color-black);
+
   --section-padding: 5rem 0;
   --section-header-padding: 3rem;
   --section-body-padding: 0 0 3rem;
@@ -423,7 +424,9 @@ a:active {
 
 }
 .section-header {
+  padding: var(--section-header-padding);
   text-align: var(--section-header-align);
+
 }
 .section-body {
   padding: var(--section-body-padding);
