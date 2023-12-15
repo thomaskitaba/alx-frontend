@@ -460,5 +460,4 @@ h1, h2, h3, h4, h5, h6 {
 }
 .footer {
   padding: var(--footer-padding);
-  text-align: var(--section-footer-align);
 }
