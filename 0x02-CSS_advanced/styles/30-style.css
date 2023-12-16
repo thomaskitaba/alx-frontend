@@ -665,14 +665,11 @@ ul.row {
   text-decoration: none;
   padding-top: 45%;
 }
-.card-work:hover .card.title {
-  opacity: 1;
-}
 .card-work .card-title::after {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
+}
+.card-work:hover .card.title {
+  opacity: 1;
 }
