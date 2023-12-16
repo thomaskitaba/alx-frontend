@@ -409,7 +409,7 @@ template {
   --header-logo-link-top: -1rem;
   --header-logo-link-left: 0;
 
-  --transition-duration: 0.3s;
+  --transition-duration: .3s;
   --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 *,
@@ -702,5 +702,8 @@ ul.row {
 }
 .card-work:hover .card-outer {
   transform: scale(0.95);
+  transition: var(-–transition-duration) var(--transition-cubic-bezier);
+}
+.card-work .card-inner {
   transition: var(-–transition-duration) var(--transition-cubic-bezier);
 }
