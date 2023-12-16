@@ -704,6 +704,6 @@ ul.row {
   transform: scale(0.95);
   transition: var(-–transition-duration) var(--transition-cubic-bezier);
 }
-.card-work .card-inner {
+.card-work .card-inner{
   transition: var(-–transition-duration) var(--transition-cubic-bezier);
 }
