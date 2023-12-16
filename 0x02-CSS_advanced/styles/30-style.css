@@ -652,7 +652,7 @@ ul.row {
 .card-work:hover .card-inner {
   background-color: rgba(0, 0, 0, 0.7);
 }
-.card-outer .card-work .card-title {
+.card-work .card-title {
   text-align: center;
   margin: 0;
   opacity: 0;
@@ -664,6 +664,6 @@ ul.row {
   text-decoration: none;
   padding-top: 45%;
 }
-.card-outer .card-work:hover .card.title {
+.card-work:hover .card.title {
   opacity: 1;
 }
