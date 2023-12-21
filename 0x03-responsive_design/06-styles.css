@@ -319,10 +319,7 @@ a:active {
 
 /* Helpers
       ============================= */
-.main img {
-  width: 100%;
-  height: auto;
-}
+
 .visually-hidden:not(:focus):not(:active) {
   position: absolute !important;
   height: 1px;
@@ -330,6 +327,11 @@ a:active {
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
+}
+
+main img {
+  width: 100%;
+  height: auto;
 }
 
 /*** 2. LAYOUT ***/
@@ -368,23 +370,28 @@ ul.row {
   width: calc((100% / 2) - 2rem);
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   :root {
-  --section-padding: 5rem 1.5rem;
-  --section-body-padding: 2rem 0 0;
+    --section-padding: 5rem 1.5rem;
+    --section-body-padding: 2rem 0 0;
   }
-  ul.row, .row {
+
+  ul.row,
+  .row {
     flex-direction: column;
     margin: 0;
   }
+
   [class*="col-"] {
     margin: 0 0 3rem 0;
   }
-  .col-1-3, .col-1-2 {
+
+  .col-1-3,
+  .col-1-2 {
     width: 100%;
   }
-
 }
+
 /* Navbar
       ============================= */
 
@@ -434,21 +441,24 @@ ul.row {
   width: 100%;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
+  :root {
+    --nav-item-margin: 0;
+  }
+
   .navbar-menu {
     display: none;
     flex: 1;
   }
+
   .header .nav {
     flex-direction: column;
     overflow: hidden;
     max-height: 0;
-    transition: max-height .2s ease-out
-  }
-  :root {
-    --nav-item-margin: 0;
+    transition: max-height 0.2s ease-out;
   }
 }
+
 /* Header
       ============================= */
 
@@ -464,35 +474,107 @@ ul.row {
   justify-content: space-between;
   align-items: center;
 }
+
 .header .menu-icon {
   cursor: pointer;
   padding: 2.5rem;
   position: relative;
   user-select: none;
+  display: none;
 }
+
 .header .menu-icon .navicon {
-  background: var(--color-white);
+  background-color: var(--color-white);
   display: block;
   width: 2rem;
-  height: .2rem;
+  height: 0.2rem;
   position: relative;
-  transition: background .2s ease-out;
+  transition: background 0.2s ease-out;
 }
-.header .menu-icon .navicon::before, .header .menu-icon .navicon::after {
-  content: '';
+
+.header .menu-icon .navicon::before,
+.header .menu-icon .navicon::after {
+  content: "";
   display: block;
   width: 100%;
   height: 100%;
   position: absolute;
-  background: var(--color-white);
-  transition: all .2s ease-out;
+  background-color: var(--color-white);
+  transition: all 0.2s ease-out;
 }
+
 .header .menu-icon .navicon::before {
-  top: .7rem;
+  top: 0.7rem;
 }
+
 .header .menu-icon .navicon::after {
-  top: -.7rem;
+  top: -0.7rem;
 }
+
+/* menu btn
+      ============================= */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .navbar-menu {
+  display: block;
+}
+
+.header .menu-btn:checked ~ .navbar-menu .nav {
+  max-height: 100%;
+  overflow: inherit;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon::before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon::after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon::before,
+.header .menu-btn:checked ~ .menu-icon .navicon::after {
+  top: 0;
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --header-padding: 2rem 0 0;
+  }
+
+  .header {
+    background: var(--color-black);
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    padding: 0 1.5rem;
+  }
+
+  .header .menu-icon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-logo {
+    flex-basis: 70%;
+  }
+}
+
+@media all and (max-width: 767px) and (min-width: 481px) {
+  .header-logo {
+    flex-basis: 79%;
+  }
+}
+
 /* Footer
       ============================= */
 
@@ -608,6 +690,21 @@ ul.row {
   justify-content: center;
   min-height: 35vh;
 }
+
+@media screen and (max-width: 767px) {
+  .section-hero {
+    margin: -0.1rem 0;
+  }
+
+  .hero-homepage {
+    background-position: 85% 0;
+  }
+
+  .section-hero .section-body {
+    padding: 2rem;
+  }
+}
+
 /* Section Latest news
       ============================= */
 
@@ -615,11 +712,12 @@ ul.row {
   flex-direction: row-reverse;
 }
 
-@media (max-width: 767px) {
+@media all and (max-width: 767px) {
   .section-latest-news .row {
     flex-direction: column;
   }
 }
+
 /* Section SERVICES
       ============================= */
 
